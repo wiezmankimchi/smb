@@ -63,16 +63,16 @@ const User = ({ user }) => {
   }
 
   return (
-    <>
-      <div className="rw-segment">
-        <header></header>
-        <section className="flex flex-1 flex-row w-full justify-evenly">
-          {/* <div> */}
-          <div className="rw-segment-header w-full">
+    <div className="border border-gray-300">
+      <section className=" flex flex-row">
+        <div className="border border-red-300">
+          <div className="rw-segment">
+
+          <div className="rw-segment-header">
             <h2 className="rw-heading rw-heading-primary">
               User {user.id} Detail
             </h2>
-            <table className="rw-table mx-auto h-4/5">
+            <table className="rw-table mx-auto">
               <tbody>
                 <tr>
                   <th>Id</th>
@@ -123,15 +123,15 @@ const User = ({ user }) => {
                 Delete
               </button>
             </nav>
-            {/* </div> */}
           </div>
-          {/* <div > */}
-
+          </div>
+        </div>
+        <div className="border border-blue-300">
           <div className="rw-segment-header w-full">
             <h2 className="rw-heading rw-heading-primary">
               User {user.id} Roles
             </h2>
-            <div className="h-4/5">
+            <div className="h-5/6 bg-gray-50">
               <ul>
                 {user.userRoles.map((role) => (
                   <li
@@ -158,12 +158,27 @@ const User = ({ user }) => {
                 Delete User Roles
               </button>
             </nav>
-          </div>
-          {/* </div> */}
-        </section>
-      </div>
-    </>
+        </div>
+        </div>
+      </section>
+    </div>
   )
+
+  // return (
+  //   <>
+  //     <div className="rw-segment">
+  //       <header></header>
+  //       <section className="flex flex-1 flex-row">
+  //         <div className="w-1/2">
+  // </div>
+  //         <div className="w-2/6" >
+
+  //         </div>
+  //         </div>
+  //       </section>
+  //     </div>
+  //   </>
+  // )
 }
 
 export default User

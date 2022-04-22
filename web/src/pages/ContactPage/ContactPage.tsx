@@ -1,19 +1,18 @@
 import { Link, routes } from '@redwoodjs/router'
 import { MetaTags } from '@redwoodjs/web'
 
-const ContactPage = () => {
+const ContactPage = ({ title = 'Contact' }) => {
   return (
     <>
       <MetaTags title="Contact" description="Contact page" />
 
-      <h1>ContactPage</h1>
-      <p>
-        Find me in <code>./web/src/pages/ContactPage/ContactPage.tsx</code>
-      </p>
-      <p>
-        My default route is named <code>contact</code>, link to me with `
-        <Link to={routes.contact()}>Contact</Link>`
-      </p>
+      <div className="flex flex-wrap">
+        <div className="w-full bg-blue-200 py-6 px-6 rounded-3xl">
+          <div className="flex justify-between text-stone-500 items-center mb-8">
+            <p className="text-2xl font-bold">{title}</p>
+          </div>
+        </div>
+      </div>
     </>
   )
 }

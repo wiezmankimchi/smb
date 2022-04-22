@@ -3,6 +3,7 @@ import { initializeApp, getApp, getApps } from 'firebase/app'
 import * as firebaseAuth from '@firebase/auth'
 import { FatalErrorBoundary, RedwoodProvider } from '@redwoodjs/web'
 import { RedwoodApolloProvider } from '@redwoodjs/web/apollo'
+import AllContextProviders from './providers/context'
 
 import FatalErrorPage from 'src/pages/FatalErrorPage'
 import Routes from 'src/Routes'
@@ -49,7 +50,9 @@ const App = () => (
     <RedwoodProvider titleTemplate="%PageTitle | %AppTitle">
       <AuthProvider client={firebaseClient} type="firebase">
         <RedwoodApolloProvider>
-          <Routes />
+          <AllContextProviders>
+            <Routes />
+          </AllContextProviders>
         </RedwoodApolloProvider>
       </AuthProvider>
     </RedwoodProvider>
